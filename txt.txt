@@ -1,0 +1,21 @@
+courseCode: P-SIPN-134,
+ courseName: Sciences de l'éduc + formation,
+ day: Lundi,
+ hourStart: 17h15,
+ hourEnd: 19h15,
+ duration: 02h00,
+ location : Cha BdJosephII 222
+, courseCode: P-SDHT-202,
+ courseName: Bases pr l'analyse stat (th),
+ day: Mardi,
+ hourStart: 17h15,
+ hourEnd: 20h15,
+ duration: 03h00,
+ location : 
+, courseCode: P-SPCN-235,
+ courseName: Sciences psychologiques II,
+ day: Mercredi,
+ hourStart: 17h15,
+ hourEnd: 20h15,
+ duration: 03h00,
+ location : Cha BdJosephII 252

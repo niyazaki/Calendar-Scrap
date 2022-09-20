@@ -10,18 +10,7 @@ from bs4 import BeautifulSoup
 import html5lib
 
 import re
-
-
-class Course:
-    def __init__(self, *args, **kwargs):
-        self.courseCode = kwargs.get("courseCode", None)
-        self.courseName = kwargs.get("courseName", None)
-        self.date = kwargs.get("date", None)
-        self.weekNumber = kwargs.get("weekNumber", None)
-        self.dayNumber = kwargs.get("dayNumber", None)
-        self.start_hour = kwargs.get("start_hour", None)
-        self.end_hour = kwargs.get("end_hour", None)
-
+from course import Course
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 driver.get("https://hplanning2022.umons.ac.be/invite")
@@ -61,6 +50,8 @@ for i in range(1, 53):
     if i != 1:
         #print(i-1, soup.prettify)
         weeks[i-1] = soup
+        with open(f"./weeks/week{i-1}.html", "w", encoding="UTF-8", newline="\n") as f:
+            f.write(soup.prettify())
     # print(week.get_attribute("innerHTML"))
     # time.sleep(5)
 
@@ -72,7 +63,6 @@ soup2 = BeautifulSoup(weeksHtml, "html5lib")
 
 with open("weekshtml.html", "w", encoding="UTF-8", newline="\n") as file2:
     file2.write(soup2.prettify())
-    print("Yes let's go")
 
 #iframe = driver.switch_to.frame("GInterface.Instances")
 
